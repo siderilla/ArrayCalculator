@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,5 +39,9 @@ namespace ArrayCalculator
             return sum / number.Length; // return the average by dividing the sum by the length of the array
         }
 
+        public double Max()
+        {
+            return number.Max();
+        }
     }
 }

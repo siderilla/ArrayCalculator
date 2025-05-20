@@ -51,5 +51,34 @@ namespace TestArrayCalculator
             var result = test.Avarage(); 
             Assert.Equal(expectedResult, result);
         }
+
+        [Theory]
+        [MemberData(nameof(GetTestData))]
+
+        public void Max_MultipleMaxArrayOfDouble_ExpectedEqualResult(string input, double expectedResult)
+        {
+            var test = new ArrayCalculator.Calculator(input); 
+            var result = test.Max(); 
+            Assert.Equal(expectedResult, result);
+        }
+
+        public static List<object[]> GetTestData()
+        {
+            return new List<object[]>
+            {
+                new object[] { "22 10,2 33 1,5", 33 },
+                new object[] { "10 20 30", 30 },
+                new object[] { "1 2 3 4 5", 5 },
+                new object[] { "0 0 0", 0 },
+                new object[] { "1,5 2,5 3,5", 3.5 }
+            };
+        }
     }
 }
+
+// COMPITI
+// provare a metter eun po' di test su serverManager (???)
+// testare separatamente un po' di funzioni recuperare file
+// test numero di elementi recuperato corretto
+// test opzione di ricerca
+// posgresql 
